@@ -25,4 +25,4 @@ urlpatterns = [
     
     
 ]
-handler404 = 'project.views.handler404'
+error404 = 'project.views.error404'

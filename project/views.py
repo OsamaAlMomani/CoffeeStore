@@ -1,3 +1,4 @@
 from django.http import HttpResponse, HttpResponseNotFound
-def handler404(req ,exp):
-    return HttpResponseNotFound("404 : Page Not Found!!")
+from django.shortcuts import render
+def error404(req ,exp):
+    return HttpResponseNotFound("<h1>404 : Page Not Found!!</h1>")
