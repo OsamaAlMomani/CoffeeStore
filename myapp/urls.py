@@ -1,6 +1,6 @@
 from django.urls import path,re_path
-from . import views
+from myapp import views
 
 urlpatterns = [
-    path('dishes/<str:dish>',views.menuitems),
+    path ('home/', views.CAF),
 ]
