@@ -17,4 +17,7 @@ def menuitems(request,dish):
 def CAF(request):
     form = CreateAccountForm()
     Context = {"Form":form}
-    return render(request, "home.html", Context)
+    return render(request, "template/home.html", Context)
+
+def home(request):
+    return render(request,"home.html")

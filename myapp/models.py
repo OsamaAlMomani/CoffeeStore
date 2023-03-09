@@ -3,29 +3,61 @@ from django.db import models
 # Create your models here.
 
 
-class sign_up (models.Model):
-    
-    first_Name = models.CharField(max_length=200)
-    last_Name=models.CharField(max_length= 100)
-    
-    primaryPhone = models.IntegerField()
-    secondaryPhone= models.IntegerField()
-    
-    email = models.EmailField (max_length=1000,primary_key=True)
-    
-    dob = models.DateField()
+class Coffee(models.Model):
+    Coffee_Name = models.CharField(max_length=100, primary_key=True)
+    Coffee_Price = models.FloatField()
+    Coffee_Describtion = models.CharField(max_length=2000)
+    Coffee_Depot = models.IntegerField()
+    def __str__(self):
+        return self.Coffee_Name
+        
     
 
-class orders(models.Model):
-    pass 
-class auth_users (models.Model):
-    pass
-class menuCategory(models.Model):
-    menuName = models.CharField(max_length=200)
-    
-class menu (models.Model):
-    category_Id = models.ForeignKey(menuCategory, on_delete=models.PROTECT,related_name="Category_ID",default=None)
-    name = models.CharField(max_length=30)
-    cuisine = models.CharField(max_length=30)
-    price = models.IntegerField(null = False)
+# class Meal(models.Model):
+#     Meal_type=models.ForeignKey()
+
+class breakfast(models.Model):
+    breakfast_Name = models.CharField(max_length=100,primary_key=True)
+    breakfast_Price = models.FloatField()
+    breakfast_Describtion = models.CharField(max_length=2000)
+    breakfast_Depot = models.IntegerField()
+    def __str__(self):
+        return self.breakfast_Name
+
+class lunch(models.Model):
+    lunch_Name = models.CharField(max_length=100,primary_key=True)
+    lunch_Price = models.FloatField()
+    lunch_Describtion = models.CharField(max_length=2000)
+    lunch_Depot = models.IntegerField()
+    def __str__(self):
+        return self.lunch_Name
+
+class dinner(models.Model):
+    dinner_Name = models.CharField(max_length=100,primary_key=True)
+    dinner_Price = models.FloatField()
+    dinner_Describtion = models.CharField(max_length=2000)
+    dinner_Depot = models.IntegerField()
+    def __str__(self):
+        return self.dinner_Name
+class Dessert(models.Model):
+    Dessert_Name = models.CharField(max_length=100,primary_key=True)
+    Dessert_Price = models.FloatField()
+    Dessert_Describtion = models.CharField(max_length=2000)
+    Dessert_Depot = models.IntegerField()
+    def __str__(self):
+        return self.Dessert_Name
+
+# class User(models.Model):
+#     '''
+#     Id
+#     name
+#     Email
+#     Age
+#     Address
+#     Order // foriegnkey
+#     JDate 
+#     '''
+#     pass
+# class Order(models.Model):
+#     pass
 

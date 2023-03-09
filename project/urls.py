@@ -20,9 +20,6 @@ from myapp import views
 urlpatterns = [
     
     path('admin/', admin.site.urls),
-    
-    path ('',include('myapp.urls')),
-    
-    
+    path ('',include('myapp.urls')),  
 ]
-error404 = 'project.views.error404'
+#error404 = 'project.views.error404'
