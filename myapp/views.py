@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.template.loader import *
 from django.http import HttpResponse
 from django.http import HttpResponseNotFound
 from myapp.form import CreateAccountForm
@@ -14,10 +15,5 @@ def menuitems(request,dish):
     discreiption = item [dish]
     return HttpResponse(f"<h2> {dish} discription : {discreiption}")
 
-def CAF(request):
-    form = CreateAccountForm()
-    Context = {"Form":form}
-    return render(request, "template/home.html", Context)
-
 def home(request):
-    return render(request,"home.html")
+    return render(request,'home.html')
